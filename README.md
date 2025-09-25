@@ -1,8 +1,11 @@
-# 🎶 Projeto Front-End – Revista Musical "SoundZone"
+# 🎵 SoundZone – Revista Musical Online
+
+[![Status do Projeto](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)]()  
+[![Licença](https://img.shields.io/badge/licença-MIT-green)]()
 
 ## 👩‍🎓 Integrantes
-- **Lauren Marçulo**
-- **Manuella Vieira Reginato** 
+- **Lauren Marçulo** – RA: 2767090  
+- **Manuella Vieira Reginato** – RA: 2767120  
 
 ## 📖 Descrição do Projeto
 O projeto consiste no desenvolvimento de um site com **HTML e CSS**, com o tema **"Mundo da música"**.  
@@ -14,7 +17,7 @@ Inspirado no estilo visual de revistas teens como a *Capricho*, o site apresenta
 
 ---
 
-## 🏗️ Estrutura do Site
+## 🏗️ Estrutura do Site (planejada)
 
 ### Página Principal – `index.html`
 - Cabeçalho com logotipo e menu de navegação.  
@@ -32,7 +35,7 @@ Inspirado no estilo visual de revistas teens como a *Capricho*, o site apresenta
 
 ---
 
-## 🎨 Design e Estilo
+## 🎨 Design e Estilo (planejado)
 - Utilização de **cores de destaque** que representam cada artista.  
 - **Fontes do Google Fonts** para identidade visual moderna e divertida.  
 - **Ícones temáticos do Font Awesome** (microfone, fones de ouvido, estrela, etc).  
