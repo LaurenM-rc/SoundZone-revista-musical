@@ -6,10 +6,10 @@
 ---
 
 ## 🎓 Informações Acadêmicas
-- **Instituição:** [Universidade Tecnológica Federal do Paraná]  
+- **Instituição:** Universidade Tecnológica Federal do Paraná
 - **Curso:** Tecnologia em Análise e Desenvolvimento de Sistemas  
-- **Disciplina:** [Desenvolvimento web - Front-end]   
-- **Semestre:** [Ex: 2º semestre de 2025]  
+- **Disciplina:** Desenvolvimento web - Front-end
+- **Semestre:** 2º semestre de 2025 
 
 📌 **Natureza do projeto:** Trabalho universitário com fins exclusivamente acadêmicos.
 
