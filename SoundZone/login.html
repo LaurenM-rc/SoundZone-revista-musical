@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo da Música - Login</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+    <header>
+        <div class="container">
+            <h1 class="logo">
+                <a href="index.html">Mundo da Música <i class="fas fa-headphones"></i></a>
+            </h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="cadastro.html">Cadastro</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="form-container">
+            <h2>Bem-vindo de volta!</h2>
+            <p>Acesse sua conta para ver novidades.</p>
+            
+            <form action="#" method="post">
+                <div>
+                    <label for="email-login">E-mail:</label>
+                    <input type="email" id="email-login" name="email-login" required>
+                </div>
+                <div>
+                    <label for="senha">Senha:</label>
+                    <div style="position: relative;">
+                        <input type="password" id="senha" required>
+                        <i class="fa-solid fa-eye" id="toggleSenhaLogin"
+                       style="position:absolute; right:10px; top:50%; transform:translateY(-50%); cursor:pointer;"></i>
+                    </div>
+                </div>
+
+                <div>
+                    <button type="submit">Entrar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Mundo da Música. Todos os direitos reservados.</p>
+            
+            <div class="cv-links">
+                <h4>Equipe:</h4>
+                <a href="https://laurenm-rc.github.io/CurriculoVittae/" target="_blank">Lauren Marçulo</a>
+                <a href="https://reginatomanu.github.io/Curriculo-Manuella/" target="_blank">Manu Reginato</a>
+            </div>
+
+            <div class="redes-sociais">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    document.querySelector("form").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const email = document.getElementById("email-login").value;
+        const senha = document.getElementById("senha").value;
+
+        const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+        const usuarioEncontrado = usuarios.find(u => u.email === email && u.senha === senha);
+
+        if (usuarioEncontrado) {
+            alert("Login realizado com sucesso!");
+            window.location.href = "index.html"; // redireciona
+        } else {
+            alert("E-mail ou senha incorretos.");
+        }
+    });
+ 
+    document.getElementById("toggleSenhaLogin").addEventListener("click", function () {
+        const campo = document.getElementById("senha");
+
+        campo.type = campo.type === "password" ? "text" : "password";
+
+        this.classList.toggle("fa-eye");
+        this.classList.toggle("fa-eye-slash");
+    });
+    </script>
+</body>
+</html> 

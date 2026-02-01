@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;500&display=swap');
+
+/* Paleta de Cores Inspirada (Estilo "Capricho") */
+:root {
+    --cor-principal-pink: #E91E63; /* Pink vibrante */
+    --cor-secundaria-purple: #673AB7; /* Roxo */
+    --cor-destaque-yellow: #FFEB3B; /* Amarelo (para destaques) */
+    --cor-texto: #333;
+    --cor-texto-claro: #FFF;
+    --cor-fundo: #f9f8fa; /* Fundo levemente cinza */
+    --cor-fundo-container: #FFFFFF;
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--cor-principal-pink);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--cor-secundaria-purple);
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- CABEÇALHO --- */
+header {
+    background: var(--cor-fundo-container);
+    padding: 20px 0;
+    border-bottom: 3px solid var(--cor-principal-pink);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky; /* Mantém o menu no topo */
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo a {
+    font-family: 'Poppins', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--cor-principal-pink);
+}
+
+header .logo i {
+    color: var(--cor-secundaria-purple);
+    margin-left: 5px;
+}
+
+header nav ul {
+    display: flex;
+}
+
+header nav li {
+    margin-left: 25px;
+}
+
+header nav a {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: var(--cor-secundaria-purple);
+    font-size: 16px;
+}
+
+header nav a:hover {
+    color: var(--cor-principal-pink);
+    border-bottom: 2px solid var(--cor-principal-pink);
+    padding-bottom: 5px;
+}
+
+/* --- CONTEÚDO PRINCIPAL (MAIN) --- */
+main {
+    padding: 30px 0;
+}
+
+/* Estilo de seção padrão (usado em Notícias e Top 5) */
+main section {
+    margin-bottom: 30px;
+    background: var(--cor-fundo-container);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+main section h2 {
+    color: var(--cor-principal-pink);
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+main section h2 i {
+    margin-right: 10px;
+    color: var(--cor-secundaria-purple);
+}
+
+/* --- PÁGINA HOME: BANNER --- */
+.banner {
+    background: linear-gradient(to right, var(--cor-secundaria-purple), #8e44ad);
+    color: var(--cor-texto-claro);
+    text-align: center;
+    padding: 40px 20px !important; /* !important para sobrepor o padding padrão da section */
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.banner-content {
+    flex: 1;
+    text-align: left;
+    z-index: 2;
+}
+.banner h2 {
+    color: var(--cor-destaque-yellow);
+    font-size: 1.5rem;
+}
+.banner h3 {
+    font-size: 2.5rem;
+    color: var(--cor-texto-claro);
+    margin-bottom: 15px;
+}
+.banner img {
+    max-width: 40%;
+    height: auto;
+    border-radius: 8px;
+    z-index: 1;
+    opacity: 0.9;
+}
+
+
+/* --- PÁGINA HOME: NOTÍCIAS (CARDS) --- */
+.cards-container {
+    display: grid;
+    /* Cria 3 colunas de tamanho igual */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; /* Espaçamento entre os cards */
+    margin-top: 20px;
+}
+
+.card {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efeito de flutuar */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+}
+
+.card .card-content {
+    padding: 15px;
+}
+
+.card .card-content h3 {
+    color: var(--cor-secundaria-purple);
+    font-size: 1.2rem;
+}
+
+/* --- PÁGINA HOME: TOP 5 --- */
+.top-artistas ol {
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+.top-artistas li {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: var(--cor-texto);
+}
+
+/* Destaque para o primeiro lugar */
+.top-artistas li:first-child {
+    color: var(--cor-principal-pink);
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+.top-artistas li:first-child::after {
+    content: " \f005"; /* Ícone de estrela do Font Awesome */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: var(--cor-destaque-yellow);
+    margin-left: 5px;
+}
+
+/* --- PÁGINAS CADASTRO E LOGIN: FORMULÁRIOS --- */
+.form-container {
+    max-width: 550px;
+    margin: 30px auto; /* Centraliza o formulário */
+    padding: 30px;
+    background: var(--cor-fundo-container);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.form-container h2 {
+    text-align: center;
+    color: var(--cor-secundaria-purple);
+    font-size: 2rem;
+}
+
+.form-container p {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+
+.form-container div {
+    margin-bottom: 15px;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="date"],
+.form-container input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+}
+
+.form-container input:focus {
+    outline: none;
+    border-color: var(--cor-principal-pink);
+    box-shadow: 0 0 5px rgba(233, 30, 99, 0.3);
+}
+
+.form-container button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: var(--cor-principal-pink);
+    color: var(--cor-texto-claro);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+
+.form-container button:hover {
+    background: #c2185b; /* Um tom de pink mais escuro */
+}
+
+
+/* --- RODAPÉ --- */
+footer {
+    background: #333;
+    color: #f4f4f4;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 30px;
+}
+
+footer .cv-links {
+    margin: 20px 0;
+}
+
+footer .cv-links h4 {
+    color: var(--cor-destaque-yellow);
+    margin-bottom: 10px;
+}
+
+footer .cv-links a {
+    color: var(--cor-texto-claro);
+    margin: 0 10px;
+    text-decoration: underline;
+}
+
+footer .cv-links a:hover {
+    color: var(--cor-principal-pink);
+}
+
+footer .redes-sociais a {
+    color: var(--cor-texto-claro);
+    margin: 0 10px;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+footer .redes-sociais a:hover {
+    color: var(--cor-principal-pink);
+}
+
+
+/* --- RESPONSIVIDADE SIMPLES --- */
+
+/* Para tablets e celulares (telas menores que 768px) */
+@media (max-width: 768px) {
+    
+    /* Ajusta o cabeçalho */
+    header .container {
+        flex-direction: column;
+    }
+    header .logo {
+        margin-bottom: 15px;
+    }
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    header nav li {
+        margin: 8px 0;
+    }
+
+    /* Ajusta o banner */
+    .banner {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .banner img {
+        max-width: 70%;
+        margin-bottom: 20px;
+    }
+    .banner-content {
+        text-align: center;
+    }
+    .banner h3 {
+        font-size: 2rem;
+    }
+
+    /* Ajusta os cards de notícia (1 coluna) */
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Ajusta formulários */
+    .form-container {
+        padding: 20px;
+    }
+}
